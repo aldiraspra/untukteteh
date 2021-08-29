@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <title>untuk teteh mentor</title>
+    </head>
+    <body>
+        <div class='position-absolute top-50 start-50 translate-middle'>
+            <button id='button' class='btn btn-primary btn-lg' onclick='mulai()'> sini teh </button>
+            <div id='iloveyou' style='display: none;'>
+                <h2 class='text-center'>we luv u teh<br>&#10084;&#65039;</h2>
+            </div>
+        </div>
+        <span id='hati' class='fixed-bottom text-center my-3' onclick='hati()'></span>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+        <script type="text/javascript">
+            const author = 'Diras';
+            document.getElementById('hati').innerHTML = `Made with &#10084;&#65039; oleh dirass`;
+            const swals = Swal.mixin({
+                cancelButtonColor: '#d33',
+                confirmButtonColor: '#3085d6',
+            });
+            async function mulai(){
+                await swals.fire('halo teh', 'apaa kabaar', 'question');
+                await swals.fire('smoga sehaat');
+                var { value: nama } = await swals.fire({
+                    title: 'ketik dulu nama teteh',
+                    input: 'text',
+                    showCancelButton: true,
+                });
+                if(nama){
+                    var { isConfirmed: sayang } = await swals.fire({
+                        title: `teh ${nama} udah sarapan blom`,
+                        confirmButtonText: 'udaah',
+                        cancelButtonText: 'bluum',
+                        showCancelButton: true,
+                    });
+                    if(sayang){
+                        await swals.fire('bagush');
+                        var { value: persen } = await swals.fire({
+                            title: 'sneng ga teh mentorinnya',
+                            icon: 'question',
+                            input: 'range',
+                            inputLabel: 'segimana',
+                            inputAttributes: {
+                                min: 1,
+                                max: 100,
+                            },
+                            inputValue: 50
+                        });
+                        if(persen){
+                            await swals.fire(`wkwkw meni ${persen}%`);
+                            var { isConfirmed: kangen } = await swals.fire({
+                                title: 'teh',
+                                confirmButtonText: 'Iyaaa',
+                                cancelButtonText: 'Ngga',
+                                showCancelButton: true,
+                            });
+                            if(kangen){
+                                await swals.fire('trimakasi udah mentorin');
+                                await swals.fire('cape ya');
+                                await swals.fire('untung baik tetehna');  
+                                var { value: nama } = await swals.fire({
+                                    title: 'tulis teh pesan kesannya,',
+                                    inputLabel: 'kmaren teteh wae yg nanya',
+                                    input: 'text',
+                                    showCancelButton: true,
+                                });
+                                await swals.fire('makasi teeh &#128522;');
+                                await swals.fire('jgn kapok');
+                                await swals.fire('terakhir');
+                                await swals.fire('klik love yg dibwah');
+                            } else {
+                                //gak kangen
+                            }
+                        }
+                    } else {
+                        //gak sayang
+                    }
+                } else {
+                    //gak isi nama
+                }
+            }
+        function hati(){
+            document.getElementById('button').style = 'display: none';
+            document.getElementById('iloveyou').style = '';
+        }
+        </script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> -->
+    </body>
+</html>
